@@ -1,6 +1,9 @@
 {
   "name": "yoheikanehara.com",
   "version": "1.0.0",
+  "scripts": {
+    "build": "grunt less"
+  },
   "dependencies": {
     "less": "^2.7.1"
   },
