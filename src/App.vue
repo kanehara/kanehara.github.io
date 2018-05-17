@@ -3,13 +3,13 @@
     <div id="content">
       <transition name="slide-fade">
         <div id="bio" v-if="displayBio">
-          <div>
+          <a href="https://github.com/kanehara" target="_blank">
             <img id="avatar" 
                   src="assets/avatar.png" 
                   :class="{animating: isAvatarAnimating}"
                   @mouseenter="animateAvatar"
                   @mouseleave="animateAvatar"/>
-          </div>
+          </a>
           <div>
             <h1>Yohei Kanehara</h1>
             <h2>Software Engineer</h2>
@@ -106,9 +106,9 @@ export default {
   height: 120px;
   position: relative;
 
-  &:hover {
-    cursor: pointer;
-  }
+  // &:hover {
+  //   cursor: pointer;
+  // }
   
   $bounce-ammount: 3;
   @keyframes bounce {
