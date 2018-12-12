@@ -18,6 +18,9 @@
       </transition>
       <transition name="slide-fade">
         <div id="contact" v-if="displayBio">
+          <a href="https://medium.com/@kanehara" target="_blank">
+            <img width="50px" src="assets/medium.png"/>
+          </a>
           <a href="https://github.com/kanehara" target="_blank">
             <img width="50px" src="assets/github.png"/>
           </a>
@@ -217,6 +220,7 @@ export default {
 body {
   margin: 0;
   font-size: 14px;
+  background-color: black;
 }
 
 a:-webkit-any-link {
