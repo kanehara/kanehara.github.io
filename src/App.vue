@@ -61,6 +61,12 @@ export default {
           href: "http://www.spotimix.com",
           backgroundImage: "assets/Spotimix.png",
           description: "A GraphQL webapp to query Spotify's recommendation API"
+        },
+        {
+          name: "Skillit",
+          href: "https://skillit.io",
+          backgroundImage: "assets/Skillit.png",
+          description: "A marketplace for people to share and sell their skills"
         }
       ]
     }

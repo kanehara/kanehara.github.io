@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-for="project in projects" :key="project.id" class="portfolio">
+  <div class="portfolio">
+    <div v-for="project in projects" :key="project.id">
       <a class="project" target="_blank" :href="project.href" >
         <p :style="{ textAlign: 'center', textDecoration: 'none' }">{{ project.description }}</p>
         <img
@@ -20,13 +20,17 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio {
-  display: grid
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .project {
   padding: 25px;
   width: 350px;
+  margin: 12px;
   transition: transform .2s;
+  display: block;
 
   &:hover {
     transform: translateY(-1.5px);
@@ -39,7 +43,6 @@ export default {
     background-position: center;
     display: inline-block;
     height: 200px;
-    width: 100%;
     border-radius: 15px;
   }
 }
