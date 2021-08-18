@@ -4,11 +4,13 @@
       <transition name="slide-fade">
         <div id="bio" v-if="displayBio">
           <a href="https://github.com/kanehara" target="_blank">
-            <img id="avatar" 
-                  src="assets/avatar.png" 
-                  :class="{animating: isAvatarAnimating}"
-                  @mouseenter="animateAvatar"
-                  @mouseleave="animateAvatar"/>
+            <img
+              id="avatar"
+              src="assets/avatar.png"
+              :class="{ animating: isAvatarAnimating }"
+              @mouseenter="animateAvatar"
+              @mouseleave="animateAvatar"
+            />
           </a>
           <div>
             <h1>Yohei Kanehara</h1>
@@ -19,83 +21,74 @@
       <transition name="slide-fade">
         <div id="contact" v-if="displayBio">
           <a href="https://medium.com/@kanehara" target="_blank">
-            <img width="50px" src="assets/medium.png"/>
+            <img width="50px" src="assets/medium.png" />
           </a>
           <a href="https://github.com/kanehara" target="_blank">
-            <img width="50px" src="assets/github.png"/>
+            <img width="50px" src="assets/github.png" />
           </a>
-          <a href="https://www.linkedin.com/in/yohei-kanehara-5b492670" target="_blank">
-            <img width="50px" src="assets/linkedin.png"/>
+          <a
+            href="https://www.linkedin.com/in/yohei-kanehara-5b492670"
+            target="_blank"
+          >
+            <img width="50px" src="assets/linkedin.png" />
           </a>
         </div>
       </transition>
       <transition name="slide-fade">
         <div id="portfolio" v-if="displayPortfolio">
           <h1>Projects</h1>
-          <Portfolio :projects="projects"/>
+          <Portfolio :projects="projects" />
         </div>
       </transition>
     </div>
-    <Space/>
+    <Space />
   </div>
 </template>
 
 <script>
-import Space from './Space'
-import Portfolio from './Portfolio'
+import Space from "./Space";
+import Portfolio from "./Portfolio";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Space,
-    Portfolio
+    Portfolio,
   },
   data() {
     return {
       displayBio: false,
       displayPortfolio: false,
       isAvatarAnimating: false,
-      projects: [
-        {
-          name: "Spotimix",
-          href: "http://www.spotimix.com",
-          backgroundImage: "assets/Spotimix.png",
-          description: "A GraphQL webapp to query Spotify's recommendation API"
-        },
-        {
-          name: "Skillit",
-          href: "https://skillit.io",
-          backgroundImage: "assets/Skillit.png",
-          description: "A marketplace for people to share and sell their skills"
-        }
-      ]
-    }
+      projects: [],
+    };
   },
   mounted() {
-    this.displayBio = true
-    this.displayPortfolio = true
+    this.displayBio = true;
+    this.displayPortfolio = true;
   },
   methods: {
     animateAvatar() {
       this.isAvatarAnimating = !this.isAvatarAnimating;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .slide-fade-enter-active {
-  transition: all .8s cubic-bezier(.76,-0.1,.7,.21);
+  transition: all 0.8s cubic-bezier(0.76, -0.1, 0.7, 0.21);
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.slide-fade-enter, .slide-fade-leave-to {
+.slide-fade-enter,
+.slide-fade-leave-to {
   transform: translateX(10px);
   opacity: 0;
 }
 
-@import './theme.scss';
+@import "./theme.scss";
 
 #content {
   position: absolute;
@@ -106,8 +99,8 @@ export default {
 }
 
 #bio {
-  text-shadow: .5px .5px $secondaryColor;
-  font-size: .6rem;
+  text-shadow: 0.5px 0.5px $secondaryColor;
+  font-size: 0.6rem;
   display: flex;
 }
 
@@ -118,68 +111,68 @@ export default {
   // &:hover {
   //   cursor: pointer;
   // }
-  
+
   $bounce-ammount: 3;
   @keyframes bounce {
     0% {
       top: 0px;
     }
     5% {
-      top: -1*($bounce-ammount/5)+px;
+      top: -1 * ($bounce-ammount/5) + px;
     }
     10% {
-      top: -2*($bounce-ammount/5)+px;
+      top: -2 * ($bounce-ammount/5) + px;
     }
     15% {
-      top: -3*($bounce-ammount/5)+px;
+      top: -3 * ($bounce-ammount/5) + px;
     }
     20% {
-      top: -4*($bounce-ammount/5)+px;
+      top: -4 * ($bounce-ammount/5) + px;
     }
     25% {
-      top: -5*($bounce-ammount/5)+px;
+      top: -5 * ($bounce-ammount/5) + px;
     }
     30% {
-      top: -4*($bounce-ammount/5)+px;
+      top: -4 * ($bounce-ammount/5) + px;
     }
     35% {
-      top: -3*($bounce-ammount/5)+px;
+      top: -3 * ($bounce-ammount/5) + px;
     }
     40% {
-      top: -2*($bounce-ammount/5)+px;
+      top: -2 * ($bounce-ammount/5) + px;
     }
     45% {
-      top: -1*($bounce-ammount/5)+px;
+      top: -1 * ($bounce-ammount/5) + px;
     }
     50% {
       top: 0px;
     }
     55% {
-      top: 1*($bounce-ammount/5)+px;
+      top: 1 * ($bounce-ammount/5) + px;
     }
     60% {
-      top: 2*($bounce-ammount/5)+px;
+      top: 2 * ($bounce-ammount/5) + px;
     }
     65% {
-      top: 3*($bounce-ammount/5)+px;
+      top: 3 * ($bounce-ammount/5) + px;
     }
     70% {
-      top: 4*($bounce-ammount/5)+px;
+      top: 4 * ($bounce-ammount/5) + px;
     }
     75% {
-      top: 5*($bounce-ammount/5)+px;
+      top: 5 * ($bounce-ammount/5) + px;
     }
     80% {
-      top: 4*($bounce-ammount/5)+px;
+      top: 4 * ($bounce-ammount/5) + px;
     }
     85% {
-      top: 3*($bounce-ammount/5)+px;
+      top: 3 * ($bounce-ammount/5) + px;
     }
     90% {
-      top: 2*($bounce-ammount/5)+px;
+      top: 2 * ($bounce-ammount/5) + px;
     }
     95% {
-      top: 1*($bounce-ammount/5)+px;
+      top: 1 * ($bounce-ammount/5) + px;
     }
     100% {
       top: 0px;
@@ -201,8 +194,8 @@ export default {
 
   a {
     color: $primaryColor;
-    text-decoration: none; 
-    text-shadow: .5px .5px $secondaryColor;
+    text-decoration: none;
+    text-shadow: 0.5px 0.5px $secondaryColor;
   }
   .github.icon {
     &:hover {
@@ -234,7 +227,8 @@ a:-webkit-any-link {
   color: inherit;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
