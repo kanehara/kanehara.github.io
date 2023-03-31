@@ -60,7 +60,14 @@ export default {
       displayBio: false,
       displayPortfolio: false,
       isAvatarAnimating: false,
-      projects: [],
+      projects: [
+        {
+          name: "Spotimix",
+          href: "http://www.spotimix.com",
+          backgroundImage: "assets/Spotimix.png",
+          description: "A GraphQL webapp to query Spotify's recommendation API"
+        },
+      ],
     };
   },
   mounted() {
