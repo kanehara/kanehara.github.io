@@ -1,6 +1,6 @@
 name = "yoheikanehara-com"
 main = "worker/index.js"
-compatibility_date = "2023-12-01"
+compatibility_date = "2025-01-07"
 
 [site]
 bucket = "./dist"
