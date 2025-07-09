@@ -1,0 +1,9 @@
+name = "yoheikanehara-com"
+main = "worker/index.js"
+compatibility_date = "2023-12-01"
+
+[site]
+bucket = "./dist"
+
+[build]
+command = "npm run build"

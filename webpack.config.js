@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: 'build.js'
   },
   module: {
@@ -18,8 +18,21 @@ module.exports = {
             // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
             // the "scss" and "sass" values for the lang attribute to the right configs here.
             // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+            'scss': [
+              'vue-style-loader',
+              'css-loader',
+              'sass-loader'
+            ],
+            'sass': [
+              'vue-style-loader',
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  indentedSyntax: true
+                }
+              }
+            ]
           }
           // other vue-loader options go here
         }
@@ -30,17 +43,11 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
-      },
-      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000
+          limit: 10000,
+          name: '[name].[ext]?[hash]'
         }
       },
       {
