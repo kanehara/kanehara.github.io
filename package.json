@@ -11,7 +11,8 @@
     "deploy": "npx wrangler deploy"
   },
   "dependencies": {
-    "vue": "^2.4.4"
+    "vue": "^2.4.4",
+    "@cloudflare/kv-asset-handler": "~0.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
