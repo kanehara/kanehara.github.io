@@ -62,10 +62,10 @@ export default {
       isAvatarAnimating: false,
       projects: [
         {
-          name: "Spotimix",
-          href: "http://www.spotimix.com",
-          backgroundImage: "assets/Spotimix.png",
-          description: "A GraphQL webapp to query Spotify's recommendation API"
+          name: "Mixceed",
+          href: "http://www.mixceed.com",
+          backgroundImage: "assets/mixceed.png",
+          description: "A webapp to generate playlists based on a combination of tracks, artists, genres, and traits.",
         },
       ],
     };
